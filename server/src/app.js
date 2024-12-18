@@ -2,7 +2,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express, { urlencoded } from "express";
 import { ApiResponse } from "./utils/ApiResponse.js";
-import {verifyJWT} from "./middlewares/auth.middlewares.js"
+
 const app = express();
 app.use(
     cors({
@@ -16,7 +16,7 @@ app.use(express.json({ limit: "17kb" }));
 app.use(urlencoded({ extended: true, limit: "17kb" }));
 app.use(express.static("public"));
 
-//importing routes
+
 import { userRouter } from "./routes/user.routes.js";
 import { videoRouter } from "./routes/video.routes.js";
 import { subscriptionRouter } from "./routes/subscription.routes.js";
